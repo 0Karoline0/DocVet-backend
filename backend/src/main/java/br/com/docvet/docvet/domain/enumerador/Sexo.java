@@ -21,4 +21,14 @@ public enum Sexo {
         return valor;
     }
 
+    public Sexo getByValor(int valor){
+        for (Sexo sexo : values()){
+            if (sexo.getValor() == valor){
+                return sexo;
+            }
+        }
+
+        throw new IllegalArgumentException("Sexo não existente: " + valor);
+    }
+
 }

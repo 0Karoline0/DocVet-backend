@@ -10,6 +10,6 @@ RUN mvn clean package
 # Package stage
 #
 FROM openjdk:17-alpine
-COPY --from=build /docvet/target/docvet.jar docvet.jar
+COPY --from=build /backend/target/docvet.jar docvet.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","docvet.jar"]
